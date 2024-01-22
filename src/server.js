@@ -550,9 +550,9 @@ app.get('/churchinfo', async (req, res) => {
         const churchLang = process.env.HOST_LANGUAGE;
         console.log(`churchLang = ${churchLang}`);
         const defaultServiceId = process.env.DEFAULT_SERVICE_ID;
-        console.log('defaultServiceId = ${defaultServiceId}`);
+        console.log(`defaultServiceId = ${defaultServiceId}`);
         const translationLanguages = process.env.TRANSLATION_LANGUAGES;
-        console.log('translationLanguages = ${translationsLanguages}`);
+        console.log(`translationLanguages = ${translationsLanguages}`);
         res.json({
             name: churchName,
             defaultServiceId: defaultServiceId, 
