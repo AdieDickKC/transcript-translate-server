@@ -537,20 +537,31 @@ app.post('/qrcode', async (req, res) => {
 app.get('/churchinfo', async (req, res) => {
     try {
         const churchName = process.env.CHURCH_NAME;
+        console.log(`Church name = ${churchName}`);
         const churchLogoBase64 = process.env.CHURCH_LOGO_BASE64;
         const churchGreeting = process.env.CHURCH_GREETING;
+        console.log(`churchGreeting = ${churchGreeting}');
         const churchMessage = process.env.CHURCH_MESSAGE;
+        console.log(`churchMessage = ${churchMessage}`);
         const churchWaitingMessage = process.env.CHURCH_WAITING_MESSAGE;
+        console.log(`churchWaitingMessage = ${churchWaitingMessage}`);
         const churchAdditionalWelcome = process.env.CHURCH_ADDITIONAL_WELCOME;
+        console.log(`churchAdditionalWelcome = ${churchAdditionalWelcome}`);
         const churchLang = process.env.HOST_LANGUAGE;
+        console.log(`churchLang = ${churchLang}`);
         const defaultServiceId = process.env.DEFAULT_SERVICE_ID;
+        console.log('defaultServiceId = ${defaultServiceId}`);
         const translationLanguages = process.env.TRANSLATION_LANGUAGES;
+        console.log('translationLanguages = ${translationsLanguages}`);
         res.json({
-            name: churchName, defaultServiceId: defaultServiceId, 
+            name: churchName,
+            defaultServiceId: defaultServiceId, 
             greeting: churchGreeting,
-            message: churchMessage, additionalWelcome: churchAdditionalWelcome, 
+            message: churchMessage,
+            additionalWelcome: churchAdditionalWelcome, 
             waiting: churchWaitingMessage,
-            language:  churchLang, translationLanguages: translationLanguages,
+            language:  churchLang,
+            translationLanguages: translationLanguages,
             base64Logo: churchLogoBase64
         })
     } catch (error) {
